@@ -1,0 +1,6 @@
+<div *ngIf="todo">
+    <h2>{{todo.title}}</h2>
+    <span>{{todo.content}}</span>
+    <h3>Deadline: {{todo.deadlineTime | date}}</h3>
+</div>
+<button (click)="goBack()">Back</button>

@@ -1,0 +1,11 @@
+<div>
+    <span>Temporary</span>
+    <label for="title">Title:</label>
+    <input #title />
+    <label for="content">Content:</label>
+    <input #content />
+</div>
+
+<button (click)="addTodo(title.value, content.value)">Add new todo</button>
+<button (click)="goBack()">Cancel</button>
+
