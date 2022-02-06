@@ -10,6 +10,10 @@ import { Location } from '@angular/common';
 })
 export class TodoAddComponent implements OnInit {
 
+  title: string = "";
+  content: string = "";
+  deadline: string = "";
+
   constructor(
     private messageService: MessagesService,
     private todoService: TodosService,
@@ -23,8 +27,8 @@ export class TodoAddComponent implements OnInit {
     this.location.back();
   }
 
-  addTodo(title: string, content: string): void {
-    this.todoService.putTodo(title, content, Date.now());
+  saveChanges(): void {
+    this.todoService.putTodo(this.title, this.content,  Date.parse(this.deadline))
     this.goBack();
   }
 

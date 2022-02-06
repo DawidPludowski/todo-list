@@ -1,0 +1,20 @@
+<div *ngIf="todo" class="todo-wrapper">
+    <div class="color-info"></div>
+    <div class="todo-content-wrapper">
+        <h2>{{todo.title}}</h2>
+        <span [innerHTML]="todo.content | wrapText" style="padding-left:20px"></span>
+    </div>
+    <div class="todo-date-wrapper">
+        Deadline: <br>
+        <b>
+            {{todo.deadlineTime | date : 'MMM d'}} <br>
+            {{todo.deadlineTime | date : 'y'}}
+        </b>
+    </div>
+    <div class="todo-options-wrapper">
+        <a routerLink="/detail/{{todo.id}}">
+            <fa-icon [icon]="configIcon" transform="grow-25"></fa-icon>
+        </a>
+        <button (click)="deleteTodo(todo)" type="button" class="btn btn-danger"><b>X</b></button>
+    </div>
+</div>

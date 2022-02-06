@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    color: #404040;
+}
+
+#wrapper {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20%;
+}
+
+button {
+    position: relative;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+}

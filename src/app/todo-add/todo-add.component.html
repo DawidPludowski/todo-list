@@ -1,11 +1,19 @@
-<div>
-    <span>Temporary</span>
-    <label for="title">Title:</label>
-    <input #title />
-    <label for="content">Content:</label>
-    <input #content />
+<div id="wrapper">
+    <div class="color-info"></div>
+    <div class="todo-content-wrapper">
+        <h2>
+            <input [(ngModel)]="title" value="" placeholder="Title">
+        </h2>
+        <span style="padding-left:20px">
+            <textarea [(ngModel)]="content" value="" placeholder="content"></textarea>
+        </span>
+    </div>
+    <div class="todo-date-wrapper">
+        Deadline: <br>
+        <input [(ngModel)]="deadline" value="" placeholder="deadline">
+    </div>
+    <div class="todo-options-wrapper">
+        <button (click)="saveChanges()" type="button" class="btn btn-success">Save</button>
+        <button (click)="goBack()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
 </div>
-
-<button (click)="addTodo(title.value, content.value)">Add new todo</button>
-<button (click)="goBack()">Cancel</button>
-

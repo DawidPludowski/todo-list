@@ -52,7 +52,14 @@ export class TodosService implements OnInit {
   deleteTodo(todo: Todo): void {
     let todos: Todo[] = this.getTodos();
     todos = todos.filter(p => p.id != todo.id);
-    console.log(todos.length);
+    localStorage.setItem(this.todosKey, JSON.stringify(todos));
+  }
+
+  updateTodo(todo: Todo): void {
+    todo.modificationTime = Date.now();
+    let todos: Todo[] = this.getTodos();
+    todos = todos.filter(p => p.id !== todo.id);
+    todos.push(todo);
     localStorage.setItem(this.todosKey, JSON.stringify(todos));
   }
 

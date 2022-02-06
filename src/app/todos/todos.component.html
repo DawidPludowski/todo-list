@@ -1,9 +1,7 @@
 <ol>
     <li *ngFor="let todo of todos">
-        <span>{{todo.title}}:{{todo.id}}</span>
-        <button (click)="deleteTodo(todo)">X</button>
-        <a routerLink="/detail/{{todo.id}}">Details</a>
+
+        <app-list-element *ngIf="todo" [todo]="todo"></app-list-element>
+
     </li>
 </ol>
-
-<a routerLink="/add">add new todo</a>

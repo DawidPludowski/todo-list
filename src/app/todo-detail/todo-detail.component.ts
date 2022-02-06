@@ -13,6 +13,7 @@ import { MessagesService } from '../messages.service';
 export class TodoDetailComponent implements OnInit {
 
   @Input() todo? : Todo;
+  deadline: string = "";
 
   constructor(
     private todoService: TodosService,
@@ -32,6 +33,15 @@ export class TodoDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  saveChanges(): void {
+    if (this.todo) {
+      const newDealine = Date.parse(this.deadline);
+      this.todo.deadlineTime = newDealine;
+      this.todoService.updateTodo(this.todo);
+    }
+    this.goBack();
   }
 
 }

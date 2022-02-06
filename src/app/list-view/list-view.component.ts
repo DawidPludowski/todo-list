@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListViewComponent implements OnInit {
 
+  title: string = "Todo app";
+
   constructor() { }
 
   ngOnInit(): void {

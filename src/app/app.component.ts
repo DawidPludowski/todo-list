@@ -9,8 +9,6 @@ import { Todo } from './todo';
 })
 export class AppComponent {
 
-  title = 'todo-list';
-
   constructor(
     private todoSerive: TodosService
   ) { }

@@ -1,6 +1,19 @@
-<div *ngIf="todo">
-    <h2>{{todo.title}}</h2>
-    <span>{{todo.content}}</span>
-    <h3>Deadline: {{todo.deadlineTime | date}}</h3>
+<div *ngIf="todo" id="wrapper">
+    <div class="color-info"></div>
+    <div class="todo-content-wrapper">
+        <h2>
+            <input [(ngModel)]="todo.title" value="{{todo.title}}" placeholder="Title">
+        </h2>
+        <span style="padding-left:20px">
+            <textarea [(ngModel)]="todo.content" value="{{todo.content}}" placeholder="content"></textarea>
+        </span>
+    </div>
+    <div class="todo-date-wrapper">
+        Deadline: <br>
+        <input [(ngModel)]="deadline" value="{{todo.deadlineTime}}" placeholder="deadline">
+    </div>
+    <div class="todo-options-wrapper">
+        <button (click)="saveChanges()" type="button" class="btn btn-success">Save</button>
+        <button (click)="goBack()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
 </div>
-<button (click)="goBack()">Back</button>

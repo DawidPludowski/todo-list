@@ -2,15 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../messages.service';
 import { Todo } from '../todo';
 import { TodosService } from '../todos.service';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  styleUrls: ['./todos.component.css'],
 })
 export class TodosComponent implements OnInit {
 
   todos: Todo[] = [];
+
+  configIcon: any = faCog;
 
   constructor(
     private messageService: MessagesService,

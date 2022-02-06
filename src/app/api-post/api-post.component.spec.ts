@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoSearchComponent } from './todo-search.component';
+import { ApiPostComponent } from './api-post.component';
 
-describe('TodoSearchComponent', () => {
-  let component: TodoSearchComponent;
-  let fixture: ComponentFixture<TodoSearchComponent>;
+describe('ApiPostComponent', () => {
+  let component: ApiPostComponent;
+  let fixture: ComponentFixture<ApiPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TodoSearchComponent ]
+      declarations: [ ApiPostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoSearchComponent);
+    fixture = TestBed.createComponent(ApiPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
