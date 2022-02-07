@@ -26,8 +26,8 @@ export class ApiPostComponent implements OnInit {
 
       if (this.isMeetConditions(params)) {
         const todo = params as Todo;
-        let title = todo.title.replace("_", " ");
-        let content = todo.content.replace("_", " ");
+        let title = todo.title.split("_").join(" ");
+        let content = todo.content.split("_").join(" ");
         this.todoService.putTodo(title, content, todo.deadlineTime);
         this.responseBody = "Success 201";
       } else {

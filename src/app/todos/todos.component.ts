@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../messages.service';
 import { Todo } from '../todo';
-import { TodosService } from '../todos.service';
+import { TodosService, SortingKey } from '../todos.service';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -25,7 +25,7 @@ export class TodosComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.todos = this.todoService.getTodos();
+    this.todos = this.todoService.getSortedTodos(SortingKey.CREATION);
   }
 
   deleteTodo(todo: Todo) {

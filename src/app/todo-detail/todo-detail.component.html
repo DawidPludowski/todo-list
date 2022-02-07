@@ -10,7 +10,7 @@
     </div>
     <div class="todo-date-wrapper">
         Deadline: <br>
-        <input [(ngModel)]="deadline" value="{{todo.deadlineTime}}" placeholder="deadline">
+        <input #dateBox value="{{todo.deadlineTime | date : 'y.MM.d'}}" placeholder="deadline" style="text-align:center;">
     </div>
     <div class="todo-options-wrapper">
         <button (click)="saveChanges()" type="button" class="btn btn-success">Save</button>

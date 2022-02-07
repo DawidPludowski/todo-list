@@ -1,5 +1,5 @@
 <div *ngIf="todo" class="todo-wrapper">
-    <div class="color-info"></div>
+    <div class="color-info" [class.hurry]="currentTime > todo.deadlineTime - milisInDay * 2"></div>
     <div class="todo-content-wrapper">
         <h2>{{todo.title}}</h2>
         <span [innerHTML]="todo.content | wrapText" style="padding-left:20px"></span>

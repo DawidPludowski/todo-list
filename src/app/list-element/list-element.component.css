@@ -58,6 +58,10 @@ h2 {
     border-right-width: 2px;
 }
 
+.hurry {
+    background-color: #ffc107;
+}
+
 .todo-date-wrapper {
     width: 17%;
     margin-bottom: auto;

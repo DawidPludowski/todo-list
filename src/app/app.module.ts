@@ -15,6 +15,7 @@ import { ListElementComponent } from './list-element/list-element.component';
 import { FormsModule } from '@angular/forms';
 import { ApiPostComponent } from './api-post/api-post.component';
 import { ApiPutComponent } from './api-put/api-put.component';
+import { ApiDeleteComponent } from './api-delete/api-delete.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ApiPutComponent } from './api-put/api-put.component';
     ListElementComponent,
     ApiPostComponent,
     ApiPutComponent,
+    ApiDeleteComponent,
   ],
   imports: [
     BrowserModule,

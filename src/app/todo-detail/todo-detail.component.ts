@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Todo } from '../todo';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -13,7 +13,7 @@ import { MessagesService } from '../messages.service';
 export class TodoDetailComponent implements OnInit {
 
   @Input() todo? : Todo;
-  deadline: string = "";
+  @ViewChild('dateBox') dateInput!: ElementRef;
 
   constructor(
     private todoService: TodosService,
@@ -37,7 +37,7 @@ export class TodoDetailComponent implements OnInit {
 
   saveChanges(): void {
     if (this.todo) {
-      const newDealine = Date.parse(this.deadline);
+      const newDealine = Date.parse(this.dateInput.nativeElement.value);
       this.todo.deadlineTime = newDealine;
       this.todoService.updateTodo(this.todo);
     }

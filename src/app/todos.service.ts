@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Todo } from './todo';
 
+export enum SortingKey {
+  TITLE = "title",
+  ID = "id",
+  DEADLINE = "deadline",
+  CREATION = "creation"
+}
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +29,26 @@ export class TodosService implements OnInit {
     } else {
       return [];
     }
+  }
+
+  getSortedTodos(key: SortingKey): Todo[] {
+    let todos = this.getTodos();
+    if (key.valueOf() === "title") {
+      todos.sort((a, b) => {
+        let atitle = a.title.toLowerCase();
+        let btitle = b.title.toLowerCase();
+        return atitle.localeCompare(btitle);
+      })
+    } else if (key.valueOf() === "id") {
+      todos.sort((a, b) => a.id - b.id);
+    } else if (key.valueOf() === "creation") {
+      todos.sort((a, b) => b.creationTime - a.creationTime);
+    } else if (key.valueOf() === "deadline") {
+      todos.sort((a, b) => b.deadlineTime - a.deadlineTime);
+    } else {
+      return [];
+    }
+    return todos;
   }
 
   getTodo(id: number): Todo | undefined {

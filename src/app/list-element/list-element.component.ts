@@ -13,8 +13,11 @@ import { faCog } from '@fortawesome/free-solid-svg-icons';
 export class ListElementComponent implements OnInit {
 
   @Input('todo') todo?: Todo;
+
   configIcon: any = faCog;
 
+  currentTime: number = Date.now();
+  milisInDay: number = 86400000;
 
   constructor(
     private messageService: MessagesService,
