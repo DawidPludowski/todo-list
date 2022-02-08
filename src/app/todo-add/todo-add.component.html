@@ -10,7 +10,9 @@
     </div>
     <div class="todo-date-wrapper">
         Deadline: <br>
-        <input [(ngModel)]="deadline" value="" placeholder="deadline">
+        <input matInput #datePicker [matDatepicker]="picker" style="text-align: center;">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
     </div>
     <div class="todo-options-wrapper">
         <button (click)="saveChanges()" type="button" class="btn btn-success">Save</button>

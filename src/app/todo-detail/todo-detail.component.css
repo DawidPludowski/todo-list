@@ -1,3 +1,4 @@
+
 #wrapper {
     display: flex;
     margin-top: 20vh;
@@ -24,7 +25,7 @@ a {
 }
 
 button {
-    margin: auto;
+    margin: 5px;
 }
 
 li:hover {
@@ -59,10 +60,10 @@ h2 {
 
 .todo-options-wrapper {
     position: relative;
-    padding: 25px;
+    padding: 5px;
     display: grid;
     position: absolute;
-    right: 0px;
+    right: 10vw;
     width: 10%;
 }
 

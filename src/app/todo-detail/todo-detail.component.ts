@@ -12,8 +12,8 @@ import { MessagesService } from '../messages.service';
 })
 export class TodoDetailComponent implements OnInit {
 
-  @Input() todo? : Todo;
-  @ViewChild('dateBox') dateInput!: ElementRef;
+  @Input() todo?: Todo;
+  @ViewChild('datePicker') picker!: ElementRef;
 
   constructor(
     private todoService: TodosService,
@@ -37,7 +37,7 @@ export class TodoDetailComponent implements OnInit {
 
   saveChanges(): void {
     if (this.todo) {
-      const newDealine = Date.parse(this.dateInput.nativeElement.value);
+      const newDealine = Date.parse(this.picker.nativeElement.value);
       this.todo.deadlineTime = newDealine;
       this.todoService.updateTodo(this.todo);
     }

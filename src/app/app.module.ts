@@ -16,6 +16,20 @@ import { FormsModule } from '@angular/forms';
 import { ApiPostComponent } from './api-post/api-post.component';
 import { ApiPutComponent } from './api-put/api-put.component';
 import { ApiDeleteComponent } from './api-delete/api-delete.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from
+  '@angular/material/button';
+import { MatButtonToggleModule } from
+  '@angular/material/button-toggle';
+import { MatDatepickerModule } from
+  '@angular/material/datepicker';
+import { MatInputModule } from
+  '@angular/material/input';
+import { MatFormFieldModule } from
+  '@angular/material/form-field';
+import { MatNativeDateModule } from
+  '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -36,7 +50,14 @@ import { ApiDeleteComponent } from './api-delete/api-delete.component';
     AppRoutingModule,
     FontAwesomeModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatNativeDateModule
   ],
   exports: [
   ],

@@ -10,10 +10,14 @@
     </div>
     <div class="todo-date-wrapper">
         Deadline: <br>
-        <input #dateBox value="{{todo.deadlineTime | date : 'y.MM.d'}}" placeholder="deadline" style="text-align:center;">
+        <input matInput #datePicker [matDatepicker]="picker" style="text-align: center;">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
     </div>
     <div class="todo-options-wrapper">
         <button (click)="saveChanges()" type="button" class="btn btn-success">Save</button>
         <button (click)="goBack()" type="button" class="btn btn-danger">Cancel</button>
     </div>
 </div>
+
